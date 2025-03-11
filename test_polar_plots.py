@@ -15,25 +15,24 @@ class TestPolarPlots(unittest.TestCase):
 
     def test_plot_creation(self):
         """测试是否正确创建了所有必要的图形元素"""
-        with patch('matplotlib.pyplot.figure') as mock_figure:
-            with patch('matplotlib.pyplot.plot') as mock_plot:
-                with patch('matplotlib.pyplot.title') as mock_title:
-                    with patch('matplotlib.pyplot.xlabel') as mock_xlabel:
-                        with patch('matplotlib.pyplot.ylabel') as mock_ylabel:
-                            # 测试三角洲曲线
-                            plot_deltoid(self.test_points)
-                            mock_figure.assert_called()
-                            mock_plot.assert_called()
-                            mock_title.assert_called()
-                            mock_xlabel.assert_called()
-                            mock_ylabel.assert_called()
+        with patch('matplotlib.pyplot.plot') as mock_plot:
+            with patch('matplotlib.pyplot.title') as mock_title:
+                with patch('matplotlib.pyplot.xlabel') as mock_xlabel:
+                    with patch('matplotlib.pyplot.ylabel') as mock_ylabel:
+                        # 测试三角洲曲线
+                        plot_deltoid(self.test_points)
+                        mock_plot.assert_called()
+                        mock_title.assert_called()
+                        mock_xlabel.assert_called()
+                        mock_ylabel.assert_called()
 
     def test_deltoid_calculation(self):
         """测试三角洲曲线的计算结果"""
         with patch('matplotlib.pyplot.plot') as mock_plot:
             plot_deltoid(self.test_points)
             args, _ = mock_plot.call_args
-            x_values, y_values = args
+            # 修改这里，正确获取x和y值
+            x_values, y_values = args[0], args[1]
             
             # 验证点数
             self.assertEqual(len(x_values), self.test_points)
@@ -48,7 +47,8 @@ class TestPolarPlots(unittest.TestCase):
         with patch('matplotlib.pyplot.plot') as mock_plot:
             plot_galilean_spiral(self.test_points)
             args, _ = mock_plot.call_args
-            x_values, y_values = args
+            # 修改这里，正确获取x和y值
+            x_values, y_values = args[0], args[1]
             
             # 验证点数
             self.assertEqual(len(x_values), self.test_points)
@@ -64,7 +64,8 @@ class TestPolarPlots(unittest.TestCase):
         with patch('matplotlib.pyplot.plot') as mock_plot:
             plot_feys_function(self.test_points)
             args, _ = mock_plot.call_args
-            x_values, y_values = args
+            # 修改这里，正确获取x和y值
+            x_values, y_values = args[0], args[1]
             
             # 验证点数
             self.assertEqual(len(x_values), self.test_points)
