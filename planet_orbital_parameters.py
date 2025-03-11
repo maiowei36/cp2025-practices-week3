@@ -32,3 +32,7 @@ def calculate_orbital_parameters():
         result[planet_names[i]] = (P_yr[i], v_km_s[i])
 
     return result
+if __name__ == "__main__":
+    # 获取计算结果
+    results = calculate_orbital_parameters()
+    
