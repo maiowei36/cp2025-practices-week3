@@ -10,4 +10,4 @@
 5. **整理结果：** 将计算结果整理成一个字典，字典的键为行星名称，值为一个包含轨道周期（年）和轨道速度（km/s）的元组。
 
 ### 提交要求
-修改名为planet_orbital_parameters.py 的 Python 文件，实现上述要求，确保代码结构清晰，注释详细。
+修改并提交名为planet_orbital_parameters.py 的 Python 文件，实现上述要求，确保代码结构清晰，注释详细。
