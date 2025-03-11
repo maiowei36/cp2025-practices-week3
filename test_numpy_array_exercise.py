@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from numpy_power_exercise import (
+from numpy_array_exercise import (
     find_power_with_six, 
     first_ten_powers,
     create_frame_matrix,
@@ -13,17 +13,12 @@ class TestNumpyPowerExercise(unittest.TestCase):
     def test_find_power_with_six(self):
         """测试2^i末尾为6的i值查找函数"""
         result = find_power_with_six()
-        
+    
         # 检查返回类型是否为numpy数组
         self.assertIsInstance(result, np.ndarray)
-        
-        # 检查数组中的每个数是否都满足条件
-        for i in result:
-            self.assertTrue(0 < i < 100)
-            self.assertEqual(str(pow(2, i))[-1], '6')
             
         # 检查是否包含了所有满足条件的数
-        all_valid = [i for i in range(1, 100) if str(pow(2, i))[-1] == '6']
+        all_valid = np.array([i for i in range(1, 100) if str(2**i)[-1] == '6'])
         np.testing.assert_array_equal(sorted(result), sorted(all_valid))
 
     def test_first_ten_powers(self):
