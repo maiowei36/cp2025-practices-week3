@@ -10,7 +10,7 @@
 由参数方程定义：
 
  $$
- x = 2 \cos \theta + \cos 2\theta \\\\
+ x = 2 \cos \theta + \cos 2\theta \\
  y = 2 \sin \theta - \sin 2\theta$$ 
 
 其中 $0 \leq \theta < 2\pi$.
@@ -21,6 +21,7 @@ $r = \theta^2$，范围： $0 \leq \theta \leq 10\pi$
 $r = e^{\cos\theta} - 2 \cos 4\theta + \sin^5 \frac{\theta}{12}$，范围： $0 \leq \theta \leq 24\pi$
 
 **极坐标转换**：极坐标到笛卡尔坐标的转换：
+
  $$
 x = r\cos\theta \\
 y = r\sin\theta
